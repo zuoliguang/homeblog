@@ -4,7 +4,7 @@
  * @Author: zuoliguang
  * @Date:   2018-09-07 13:17:33
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-09-15 15:17:06
+ * @Last Modified time: 2018-10-25 17:26:17
  */
 
 class IndexController extends Yaf_Controller_Abstract {
@@ -31,14 +31,6 @@ class IndexController extends Yaf_Controller_Abstract {
 
 		return false; // 模板输出到此结束
 	}
-
-
-
-
-
-
-
-	
 
 	/**
 	 * 关于我
