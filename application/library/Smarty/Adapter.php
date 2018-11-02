@@ -1,22 +1,18 @@
 <?php
 
-/*确保Smarty.class.php在Smarty/libs/下*/
+/*确保Smarty.class.php在Smarty/下*//*基类目录为library*/
 
-// Yaf_Loader::import( "Smarty/libs/Smarty.class.php");   /*基类目录为library*/
+Yaf_Loader::import( "Smarty/Autoloader.php");
 
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/Smarty.class.php");
+Yaf_Loader::import( "Smarty/Smarty.class.php");
 
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/sysplugins/smarty_internal_templatecompilerbase.php");
+Yaf_Loader::import( "Smarty/SmartyBC.class.php");
 
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/sysplugins/smarty_internal_templatelexer.php");
+Yaf_Loader::import( "Smarty/sysplugins/smartyexception.php");
 
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/sysplugins/smarty_internal_templateparser.php");
+/*Smarty_Adapter类为yaf与smarty之间的适配器*/
 
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/sysplugins/smarty_internal_compilebase.php");
-
-Yaf_Loader::import( APP_PATH . "/application/library/Smarty/libs/sysplugins/smarty_internal_write_file.php");
-
-class Smarty_Adapter implements Yaf_View_Interface   /*Smarty_Adapter类为yaf与smarty之间的适配器*/
+class Smarty_Adapter implements Yaf_View_Interface
 {
 
     /**

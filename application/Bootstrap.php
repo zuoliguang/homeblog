@@ -4,12 +4,12 @@
  * @Author: zuoliguang
  * @Date:   2018-09-07 13:17:33
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-10-30 15:27:37
+ * @Last Modified time: 2018-11-02 16:48:54
  */
 
 require APP_PATH . '/vendor/autoload.php'; // 加载自动加载类
 
-require APP_PATH . '/application/library/Smarty/libs/Adapter.php';
+require APP_PATH . '/application/library/Smarty/Adapter.php';
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
