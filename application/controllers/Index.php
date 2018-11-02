@@ -4,7 +4,7 @@
  * @Author: zuoliguang
  * @Date:   2018-09-07 13:17:33
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-10-25 17:26:17
+ * @Last Modified time: 2018-10-30 15:43:57
  */
 
 class IndexController extends Yaf_Controller_Abstract {
@@ -23,13 +23,19 @@ class IndexController extends Yaf_Controller_Abstract {
 	 */
 	public function indexAction() 
 	{
-		$this->display("layout/header");
+		// $this->display("layout/header");
 
-		$this->display("index");
+		// $this->display("index");
 
-		$this->display("layout/footer");
+		// $this->display("layout/footer");
 
-		return false; // 模板输出到此结束
+		$this->getView()->display("layout/header");
+
+		$this->getView()->display("index");
+		
+		$this->getView()->display("layout/footer");
+
+		// return false; // 模板输出到此结束
 	}
 
 	/**
