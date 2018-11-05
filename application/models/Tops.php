@@ -3,7 +3,7 @@
  * Tops
  * @Date:   2018-11-05 10:28:18
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 11:19:23
+ * @Last Modified time: 2018-11-05 14:42:34
  */
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,7 +29,7 @@ class TopsModel extends Model
      */
     public function header_tops($count=3)
     {
-        $tops = self::where('is_del', '=', 0)->get()->toArray();
+        $tops = self::where('is_del', '=', 0)->get();
 
         if (count($tops) >= $count) {
 

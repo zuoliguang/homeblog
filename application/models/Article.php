@@ -4,7 +4,7 @@
  * ArticleModel
  * @Date:   2018-11-05 10:57:29
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 13:13:56
+ * @Last Modified time: 2018-11-05 15:01:59
  */
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,6 +28,14 @@ class ArticleModel extends Model
     public function category()
     {
         return $this->hasOne('CategoryModel', 'id', 'category_id');
+    }
+
+    /**
+     * 关联的评论信息
+     */
+    public function comments()
+    {
+        return $this->hasMany('CommentModel', 'art_id', 'id');
     }
 
     /**
@@ -145,7 +153,55 @@ class ArticleModel extends Model
      */
     public function prev_next_article($id)
     {
-        # code...
+        $result = [];
+
+        $min = self::where('is_del', '=', 0)->min('id');
+
+        $max = self::where('is_del', '=', 0)->max('id');
+
+        // prev
+        
+        if ($id > $min) {
+
+            $prev_id = $id - 1;
+
+            while ($prev_id >= $min) {
+
+                $prev = self::where('is_del', '=', 0)->find($prev_id);
+
+                if (!empty($prev)) {
+
+                    $result['prev'] = $prev;
+
+                    break;
+                }
+
+                $prev_id--;
+            }
+        }
+
+        // next
+        
+        if ($id < $max) {
+
+            $next_id = $id + 1;
+
+            while ($next_id <= $max) {
+
+                $next = self::where('is_del', '=', 0)->find($next_id);
+
+                if (!empty($next)) {
+
+                    $result['next'] = $next;
+
+                    break;
+                }
+
+                $next_id++;
+            }
+        }
+
+        return $result;
     }
 
     /**
@@ -153,6 +209,8 @@ class ArticleModel extends Model
      */
     public function article($id)
     {
-        # code...
+        $article = self::find($id);
+
+        return $article;
     }
 }

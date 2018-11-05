@@ -4,7 +4,7 @@
  * @Author: zuoliguang
  * @Date:   2018-09-07 13:17:33
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 13:03:39
+ * @Last Modified time: 2018-11-05 16:34:06
  */
 
 class IndexController extends Yaf_Controller_Abstract {
@@ -15,19 +15,6 @@ class IndexController extends Yaf_Controller_Abstract {
 		// Yaf_Dispatcher::getInstance()->disableView(); // 控制器 关闭自动加载模板
 
 		header('Content-Type: text/html; charset=utf-8'); 
-	}
-
-	/**
-	 * ------------------------------------------------------------
-	 * @author zuoliguang 2018-11-05
-	 * @return [type] [description]
-	 */
-	public function testAction()
-	{
-		$m = new ArticleModel();
-		$data = $m->rankings();
-		echo json_encode($data);
-		return false;
 	}
 
 	/**

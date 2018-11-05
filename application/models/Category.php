@@ -4,7 +4,7 @@
  * CategoryModel
  * @Date:   2018-11-05 10:57:29
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 12:52:05
+ * @Last Modified time: 2018-11-05 14:57:54
  */
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,10 +23,10 @@ class CategoryModel extends Model
     public $timestamps = false;
 
     /**
-     * 关联文章中的分类字段
+     *  关联的文章列表
      */
-    public function article()
+    public function articles()
     {
-        return $this->belongsTo('ArticleModel', 'category_id');
+        return $this->hasMany('ArticleModel', 'category_id', 'id');
     }
 }

@@ -4,7 +4,7 @@
  * AboutmeModel
  * @Date:   2018-11-05 10:57:29
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 11:26:18
+ * @Last Modified time: 2018-11-05 14:42:00
  */
 use Illuminate\Database\Eloquent\Model;
 
@@ -29,7 +29,7 @@ class AboutmeModel extends Model
      */
     public function me()
     {
-        $me = self::where('is_default', '=', 1)->get()->toArray();
+        $me = self::where('is_default', '=', 1)->get();
 
         return current($me);
     }

@@ -4,7 +4,7 @@
  * FriendshipsModel
  * @Date:   2018-11-05 10:57:29
  * @Last Modified by:   zuoliguang
- * @Last Modified time: 2018-11-05 11:06:19
+ * @Last Modified time: 2018-11-05 15:12:59
  */
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,4 +21,12 @@ class FriendshipsModel extends Model
      * @var boolean
      */
     public $timestamps = false;
+
+    /**
+     * 可用的评论别名
+     */
+    public function available()
+    {
+        return $this->where('is_del', '=', 0);
+    }
 }
