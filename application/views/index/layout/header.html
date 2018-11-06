@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>个人博客 - 厚德载物，自强不息</title>
-    <meta name="keywords" content="个人博客, PHP高级开发工程师, Web前端, 编程技术" />
+    <meta name="keywords" content="个人博客, PHP开发工程师, 编程技术" />
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,12 +23,18 @@
     <div class="logo"><a href="/">个人博客</a></div>
     <h2 id="mnavh"><span class="navicon"></span></h2>
     <ul id="starlist">
-        <li><a href="/">网站首页</a></li>
+
+        <li><a href="/">首页</a></li>
+
+        <li><a href="/index/recommend">推荐</a></li>
+
+        <?php foreach($base['categories'] as $category) { ?>
+
+            <li><a href="/index/category?id=<?=$category['id']?>"><?=$category['title']?></a></li>
+
+        <?php } ?>
+
         <li><a href="/index/about">关于我</a></li>
-        <li><a href="/index/recommend">推荐列表</a></li>
-        <li><a href="/index/list">文章列表</a></li>
-        <li><a href="/index/info">信息</a></li>
-        <li><a href="/index/article">模板内容页</a></li>
     </ul>
 </div>
 
